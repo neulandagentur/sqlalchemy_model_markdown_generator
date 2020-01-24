@@ -4,7 +4,7 @@ Turn your sqlalchemy models into a markdown table.
 
 ## Example
 
-The generator turns this
+**The generator turns this**
 
 ``` python
 from sqlalchemy import Column, Integer, String, Boolean
@@ -20,7 +20,7 @@ class TestModel(Model):
     active = Column(Boolean)
 ```
 
-into this:
+**into this:**
 
 |name|type|unique|nullable|
 |-|-|-|-|
@@ -30,13 +30,13 @@ into this:
 |active|BOOLEAN|None|True|
 
 
-with following script
+**with following script:**
 
 ``` python3
 from generator import Generator
 from test_model import TestModel
 
-md_table_generator = Generator(TestModel, fields=('name','type', 'unique', 'nullable  '))
+md_table_generator = Generator(TestModel, fields=('name','type', 'unique', 'nullable'))
 md_table_generator.generate_file('table.md')
 ```
 
